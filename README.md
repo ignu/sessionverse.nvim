@@ -23,3 +23,7 @@ Saves a session that doesn't respect
 ### `:SessionVerseJump`
 
 Opens a list of known sessions and if there're no dirty files jumps you to the branch and session.
+
+## Inspiration
+
+[https://github.com/rmagatti/auto-session](https://github.com/rmagatti/auto-session)
