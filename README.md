@@ -24,6 +24,6 @@ Saves a session that doesn't respect
 
 Opens a list of known sessions and if there're no dirty files jumps you to the branch and session.
 
-## Inspiration
+### Inspiration
 
-[https://github.com/rmagatti/auto-session](https://github.com/rmagatti/auto-session)
+[https://github.rom/rmagatti/auto-session](https://github.com/rmagatti/auto-session)

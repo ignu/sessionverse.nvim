@@ -1,19 +1,17 @@
-print("Loaded sessionverse")
+print("Loaded SessionVerse 🚀")
+local neogit = require("neogit")
+local cli = require("neogit.lib.git.cli")
+local parser = require("neogit.buffers.commit_view.parsing")
 
 local M = {}
 
--- let status = system('git status -s | grep "^ \?\(M\|A\)" | cut -d " " -f 3')
-M.getDirtyFiles = function()
-	return {
-		"README.MD",
-	}
-end
-
 M.openDirtyFiles = function()
-	local files = M.getDirtyFiles()
-	for i, file in pairs(files) do
-		vim.api.nvim_command("tabe " .. file)
+	local git_info = parser.parse_commit_overview(cli.show.stat.oneline.call_sync())
+	for _, file in pairs(git_info.files) do
+		vim.api.nvim_command("tabe " .. file.path)
 	end
 end
+
+M.openDirtyFiles()
 
 return M
